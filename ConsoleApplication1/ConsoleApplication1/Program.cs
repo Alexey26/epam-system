@@ -11,7 +11,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
         }
-        static int[] Sort(int[] mass) // быстрая 
+        static int[] Sort(int[] mass) 
         {
             int oporn = mass[mass.Length / 2], m1 = 0, n1 = 0, m2 = 0, n2 = 0, m3 = 0, n3 = 0;
             for (int i = 0; i < mass.Length; i++)

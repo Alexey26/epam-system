@@ -10,9 +10,6 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
-            int[] mass = new int[] { 1, 2, 3, 4, 5 };
-            Console.Write (find (mass, 4));
-            Console.ReadKey ();
         }
         static bool find(int[] mass, int a)
         {

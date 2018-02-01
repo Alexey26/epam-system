@@ -11,22 +11,29 @@ namespace ConsoleApplication2
         static void Main(string[] args)
         {
             int[] mass = new int[] { 1, 2, 3, 4, 5 };
-            Console.Write (find (mass, 6));
+            Console.Write (find (mass, 4));
             Console.ReadKey ();
         }
         static bool find(int[] mass, int a)
         {
             bool s = false;
-            for (int i = 0; i < mass.Length; i++)
+            if ((mass.Length == 0) || (a < mass[0]) || (a > mass[mass.Length - 1]))
+                return s;
+            int first = 0;
+            int last = mass.Length;
+            while (first < last)
             {
-                if (mass[i] == a)
-                {
-                    s = true;
-                    break;
-                }
+                int mid = first + (last - first) / 2;
+                if (a <= mass[mid])
+                    last = mid;
+                else
+                    first = mid + 1;
             }
+            if (mass[last] == a)
+                s = true;
             return s;
         }
     }
 }
+
 

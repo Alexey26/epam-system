@@ -10,30 +10,40 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine ("Введите количество элементов массива");
+            int n = Int32.Parse (Console.ReadLine ());
+            int[] mass = new int[n];
+            Console.WriteLine ("Введите элементы массива");
+            for (int i = 0; i < n; i++)
+                mass[i] = Int32.Parse (Console.ReadLine ());
+            Sort (mass);
+            for (int i = 0; i < n; i++)
+                Console.Write(mass[i]+ " ");
+            Console.ReadKey ();
         }
         static int[] Sort(int[] mass) 
         {
-            int oporn = mass[mass.Length / 2], m1 = 0, n1 = 0, m2 = 0, n2 = 0, m3 = 0, n3 = 0;
+            int mid = mass[mass.Length / 2], less = 0, lessquantity = 0, eqaul = 0, eqaulquantity = 0, more = 0, morequantity = 0;
             for (int i = 0; i < mass.Length; i++)
             {
-                if (mass[i] < oporn) m1++;
-                if (mass[i] == oporn) m2++;
-                if (mass[i] > oporn) m3++;
+                if (mass[i] < mid) less ++;
+                if (mass[i] == mid) eqaul++;
+                if (mass[i] > mid) more++;
             }
-            int[] mass1 = new int[m1];
-            int[] mass2 = new int[m2];
-            int[] mass3 = new int[m3];
+            int[] mass1 = new int[less];
+            int[] mass2 = new int[eqaul];
+            int[] mass3 = new int[more];
             for (int i = 0; i < mass.Length; i++)
             {
-                if (mass[i] < oporn) { mass1[n1] = mass[i]; n1++; }
-                if (mass[i] == oporn) { mass2[n2] = mass[i]; n2++; }
-                if (mass[i] > oporn) { mass3[n3] = mass[i]; n3++; }
+                if (mass[i] < mid) { mass1[lessquantity] = mass[i]; lessquantity++; }
+                if (mass[i] == mid) { mass2[eqaulquantity] = mass[i]; eqaulquantity++; }
+                if (mass[i] > mid) { mass3[morequantity] = mass[i]; morequantity++; }
             }
-            if (!(m1 == 0 && m2 == 0 || m1 == 0 && m3 == 0 || m2 == 0 && m3 == 0))
+            if (!(less == 0 && eqaul == 0 || less == 0 && more == 0 || eqaul == 0 && more == 0))
             {
-                if (m1 > 1) mass1 = Sort (mass1);
-                if (m2 > 1) mass2 = Sort (mass2);
-                if (m3 > 1) mass3 = Sort (mass3);
+                if (less > 1) mass1 = Sort (mass1);
+                if (eqaul > 1) mass2 = Sort (mass2);
+                if (more > 1) mass3 = Sort (mass3);
             }
             for (int i = 0; i < mass1.Length; i++)
                 mass[i] = mass1[i];

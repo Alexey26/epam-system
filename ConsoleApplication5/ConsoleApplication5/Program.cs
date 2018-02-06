@@ -14,16 +14,12 @@ namespace ConsoleApplication5
             int n = Int32.Parse (Console.ReadLine());
             int[] mass = new int[n];
             Console.WriteLine ("Введите элементы массива");
-            for (int i=0;i<n;i++)
+            for (int i = 0; i < n; i++) 
                 mass[i] = Int32.Parse (Console.ReadLine ());
-            int[] kol = new int[255];
-            for (int i=0; i < mass.Length; i++)
-                kol[mass[i]]++;
-            for (int i = 0; i<255 ; i++)
-            {
-                if (kol[i] == 1)
-                    Console.WriteLine ("Элемент который не повторяется "+i);
-            }
+            int a = mass[0];
+            for (int i=1; i < mass.Length; i++)
+               a = a ^ mass[i];
+            Console.WriteLine ("Элемент который не повторяется "+a);
             Console.ReadKey ();
         }
     }

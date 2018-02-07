@@ -19,7 +19,7 @@ namespace ConsoleApplication3
         {
             bool s = false;
             const float t = 0.0001f;
-            if ((x<=8) && (x >= 1) && (y>=1) && (y <= 8))
+            if (x <= 8 && x >= 1 && y >= 1 && y <= 8)
             {
                 x = (float) Math.Ceiling (x + t);
                 if (y <= x)

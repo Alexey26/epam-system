@@ -11,22 +11,22 @@ namespace ConsoleApplication2
         static void Main(string[] args)
         {
         }
-        static bool find(int[] mass, int a)
+        static bool find(int[] mass, int searchnum)
         {
             bool s = false;
-            if ((mass.Length == 0) || (a < mass[0]) || (a > mass[mass.Length - 1]))
+            if (mass.Length == 0 || searchnum < mass[0] || searchnum > mass[mass.Length - 1])
                 return s;
             int first = 0;
             int last = mass.Length;
             while (first < last)
             {
-                int mid = first + (last - first) / 2;
-                if (a <= mass[mid])
+                int mid = (first + last) / 2;
+                if (searchnum <= mass[mid])
                     last = mid;
                 else
                     first = mid + 1;
             }
-            if (mass[last] == a)
+            if (mass[last] == searchnum)
                 s = true;
             return s;
         }

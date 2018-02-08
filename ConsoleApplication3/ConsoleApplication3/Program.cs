@@ -10,10 +10,6 @@ namespace ConsoleApplication3
     {
         static void Main(string[] args)
         {
-            float x = float.Parse (Console.ReadLine ());
-            float y = float.Parse (Console.ReadLine ());
-            Console.WriteLine (Find (x, y));
-            Console.ReadKey ();
         }
         static bool Find(float x, float y)
         {

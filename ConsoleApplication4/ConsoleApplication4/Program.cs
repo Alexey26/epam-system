@@ -13,7 +13,7 @@ namespace ConsoleApplication4
             int sum = 3;
             for (int i = 5; i <= 1000; i++)
             {
-                if  (i % 3 == 0 || i % 5 == 0 )
+                if (i % 3 == 0 || i % 5 == 0)
                     sum += i;
             }
             Console.Write (sum);
